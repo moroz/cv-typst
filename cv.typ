@@ -1,4 +1,9 @@
-#set text(font: "IBM Plex Sans", ligatures: false, lang: "en")
+#set text(
+  font: (
+    "IBM Plex Sans",
+    "Heiti TC"
+  ), ligatures: false, lang: "en"
+)
 #set page(margin: 2cm)
 
 #show link: underline
@@ -7,15 +12,19 @@
 #show heading.where(level: 1): set text(size: 20pt)
 #show heading.where(level: 2): set text(fill: oklch(41%, 0.159, 10.272deg), size: 13pt)
 
+#let strong(block) = {
+  text(weight: 500, block)
+}
+
 #show heading.where(level: 2): it => [
-  #pad(top: 0pt, bottom: -10pt)[#it]
+  #pad(top: 5pt, bottom: -10pt)[#it]
   #line(length: 100%, stroke: 0.75pt)
 ]
 
 = Karol Moroz
 
-+48 735 935 972 | The Hague, NL | #link("mailto:karol@moroz.dev") | #link("https://moroz.dev")[moroz.dev] | #link("https://github.com/moroz")[github.com/moroz] \
-YouTube: #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again]
++48 735 935 972 | The Hague, NL (EU citizen) | #link("mailto:karol@moroz.dev") | #link("https://moroz.dev")[moroz.dev] | #link("https://github.com/moroz")[github.com/moroz] \
+#strong[YouTube:] #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again]
 
 #let eduitem(
   faculty: "",
@@ -24,8 +33,7 @@ YouTube: #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again
   location: ""
 ) = {
   [
-    #v(0.5em)
-    #strong(institution) #h(1fr) #period \
+    #strong(institution) #h(1fr) #text(weight: 500, period) \
     #faculty
   ]
 }
@@ -46,24 +54,28 @@ YouTube: #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again
   faculty: "Bachelor of Arts in Chinese Studies"
 )
 
+#v(0.5em)
+
 #let workitem(
   title: "",
   company: "",
   period: "",
   location: "",
-  website: ""
+  website: "",
+  stack: ""
 ) = {
   [
-    #v(0.5em)
-    #strong(title) #h(1fr) #period \
+    #text(weight: 700, title) #h(1fr) #text(weight: 500, period) \
     #if website == "" {
       company
     } else {
       link(website, company)
-    } #h(1fr) #emph(location)
+    } #h(1fr) #emph(location) \
+    #if stack != "" {
+      [#text(weight: 500)[Technologies:] #stack]
+    }
   ]
 }
-
 
 == Work Experience
 
@@ -71,11 +83,11 @@ YouTube: #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again
   title: "Senior Full Stack Developer",
   company: "virtualQ GmbH",
   location: "Berlin, Germany (remote)",
-  period: "August 2022–present"
+  period: "August 2022–present",
+  stack: "Ruby on Rails, Elixir, React, Svelte, Terraform, bash, PowerShell, Go."
 )
 
-*Technologies:* Ruby on Rails, Elixir, React, Svelte, Terraform, bash, PowerShell, Go.
-
+- Migrated cloud infrastructure from a single AWS account to separate sub-accounts, using Terraform and a bunch of bash/PowerShell scripts.
 - Built and shipped a new product --- a highly customizable web widget for phone appointments, used in production by major German enterprise clients since 2023.
 - Replaced load-intensive parts of the Rails monolith with optimized Elixir-based microservices.
 - Set up point-in-time backups of production databases, with periodic cross-account, cross-region replication, using AWS Backup, KMS, and Terraform.
@@ -87,57 +99,92 @@ YouTube: #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again
   company: "LL Informatics",
   period: "September 2021–July 2022",
   location: "Warsaw, Poland",
-  website: "https://llinformatics.com/"
+  website: "https://llinformatics.com/",
+  stack: "Elixir, Phoenix LiveView, GraphQL, React, Ruby on Rails."
 )
 
-*Technologies:* Elixir, Phoenix LiveView, GraphQL, React, Ruby on Rails.
+#v(0.5em)
 
 #workitem(
   title: "Full Stack Developer",
-  company: "The Barking Dog Entertainment 愛吠的狗",
+  company: [The Barking Dog Entertainment #text(weight: 400, size: 10pt)[愛吠的狗]],
   location: "Kaohsiung, Taiwan",
   period: "October 2020–April 2024",
-  website: "https://www.barkingdog.ai/"
+  website: "https://www.barkingdog.ai/",
+  stack: "Node.js, Elixir, React, Go, Terraform, Ansible."
 )
 
-*Technologies:* Node.js, Elixir, React, Go, Terraform, Ansible.
+#v(0.5em)
 
 #workitem(
   title: "Full Stack Developer",
   company: "Cogini Hong Kong Limited",
   period: "May–December 2019",
   location: "Taipei, Taiwan",
-  website: "https://cogini.org/"
+  website: "https://cogini.org/",
+  stack: "Elixir, React, GraphQL, Terraform, Ansible, bash, AWS CodePipeline."
 )
 
-*Technologies:* Elixir, React, GraphQL, Terraform, Ansible, bash, AWS CodePipeline.
+#v(0.5em)
 
 #workitem(
   title: "Full Stack Developer",
   company: "Access AP Taiwan",
   period: "October 2018–May 2019",
   location: "Taipei, Taiwan",
-  website: "https://ap.access-company.com/en/"
+  website: "https://ap.access-company.com/en/",
+  stack: "Elixir, React, PostgreSQL, in-house frameworks."
 )
 
-*Technologies:* Elixir, React, PostgreSQL, in-house frameworks.
+#v(0.5em)
 
 #workitem(
   title: "Junior Software Developer",
   company: "Reverse-Retail GmbH",
   website: "https://www.buddyandselly.com/de-de/",
   location: "Hamburg, Germany",
-  period: "September 2017–July 2018"
+  period: "September 2017–July 2018",
+  stack: "Ruby on Rails, MySQL, PostgreSQL."
 )
 
-*Technologies*: Ruby on Rails, MySQL, PostgreSQL.
+#v(0.5em)
 
 #workitem(
   title: "Software Development Intern",
   company: "Goodlife.TW",
   website: "https://goodlife.tw/",
   location: "Taipei, Taiwan",
-  period: "December 2016–February 2017"
+  period: "December 2016–February 2017",
+  stack: "Ruby on Rails, MySQL."
 )
 
-*Technologies:* Ruby on Rails, MySQL.
+#pagebreak()
+
+== Skills
+
+#strong[Languages:] Fluent in Polish (native), English (IELTS 8), Chinese (HSK 5, TOCFL 4). \
+Good knowledge of German (Goethe-Institut Zentrale Mittelstufenprüfung, C1). \
+Conversational in Russian and Spanish. \
+Basic knowledge of Japanese, Italian, Esperanto, Norwegian, Bulgarian.
+
+#strong[Programming languages:] Elixir, Ruby, Go, TypeScript, Rust, C\#.
+
+#strong[AWS:] S3, ECS/Fargate, EC2, RDS, DynamoDB, CodePipeline, ECR, Bedrock, 
+
+#strong[Libraries and frameworks:] Phoenix, Ruby on Rails, ASP.NET Core, Astro, Svelte, React, sqlc. \
+
+#strong[Operating systems:] Debian GNU/Linux or macOS (preferred); FreeBSD (server). \
+
+#strong[Tooling:] Debian GNU/Linux or macOS; Goland, nvim, jj, mise; PostgreSQL, SQLite, MariaDB; Terraform, Terragrunt, Docker, Ansible, Pulumi.
+
+== Side projects
+
+#text(weight: 700)[Homeo Sapiens] #h(1fr) #strong[November 2025--present] \
+#strong[Website:] #link("https://hs.authorizz.com") \
+#strong[Repository:] #link("https://github.com/moroz/homeosapiens-go")[github.com/moroz/homeosapiens-go] \
+#strong[Stack:] Go, PostgreSQL, sqlc, Gomponents, Tailwind, AWS S3, AWS CloudFront.
+
+#text(weight: 700)[Redesign of www.neter.ch] #h(1fr) #strong[August 2025--present] \
+#strong[Website:] #link("https://neter.authorizz.com") \
+#strong[Repository]: #link("https://github.com/moroz/absent-apogee/")[github.com/moroz/absent-apogee] \
+#strong[Stack:] Astro, Svelte.
