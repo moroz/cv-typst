@@ -26,36 +26,6 @@
 +48 735 935 972 | The Hague, NL (EU citizen) | #link("mailto:karol@moroz.dev") | #link("https://moroz.dev")[moroz.dev] | #link("https://github.com/moroz")[github.com/moroz] \
 #strong[YouTube:] #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again]
 
-#let eduitem(
-  faculty: "",
-  institution: "",
-  period: "",
-  location: ""
-) = {
-  [
-    #strong(institution) #h(1fr) #text(weight: 500, period) \
-    #faculty
-  ]
-}
-
-== Education
-
-#eduitem(
-  institution: "National Taiwan Normal University",
-  location: "Taipei, Taiwan",
-  period: "2018–2020",
-  faculty: "Graduate Institute of Translation and Interpretation (no degree)"
-)
-
-#eduitem(
-  institution: "Adam Mickiewicz University",
-  location: "Poznań, Poland",
-  period: "2012–2016",
-  faculty: "Bachelor of Arts in Chinese Studies"
-)
-
-#v(0.5em)
-
 #let workitem(
   title: "",
   company: "",
@@ -90,7 +60,7 @@
 - Migrated cloud infrastructure from a single AWS account to separate sub-accounts, using Terraform and a bunch of bash/PowerShell scripts.
 - Built and shipped a new product --- a highly customizable web widget for phone appointments, used in production by major German enterprise clients since 2023.
 - Replaced load-intensive parts of the Rails monolith with optimized Elixir-based microservices.
-- Set up point-in-time backups of production databases, with periodic cross-account, cross-region replication, using AWS Backup, KMS, and Terraform.
+- Set up point-in-time backups of production databases, with periodic cross-account,\ cross-region replication, using AWS Backup, KMS, and Terraform.
 
 #v(0.5em)
 
@@ -109,10 +79,15 @@
   title: "Full Stack Developer",
   company: [The Barking Dog Entertainment #text(weight: 400, size: 10pt)[愛吠的狗]],
   location: "Kaohsiung, Taiwan",
-  period: "October 2020–April 2024",
+  period: [October 2020--April 2024],
   website: "https://www.barkingdog.ai/",
   stack: "Node.js, Elixir, React, Go, Terraform, Ansible."
-)
+) \
+Remote contractor since August 2021.
+
+- Built and managed cloud and on-premises infrastructure for multiple client projects.
+- Developed a mobile-first web application for China Steel, consuming data from multiple on-premises MSSQL databases, helping engineers analyze vibration data from furnaces. Deployed on-prem to a CentOS 7 VM.
+- Maintained, managed, and developed the internal CRM system of Genghis Khan Fitness Club, a major Taiwanese fitness chain. Automated locker rentals. Implemented automatic contract extensions during COVID lockdowns.
 
 #v(0.5em)
 
@@ -158,33 +133,75 @@
   stack: "Ruby on Rails, MySQL."
 )
 
-#pagebreak()
+- Rewrote the website #link("https://badbuyerlist.org/", "BadBuyerList.org").
+
+#let eduitem(
+  faculty: "",
+  institution: "",
+  period: "",
+  location: ""
+) = {
+  [
+    #strong(institution) #h(1fr) #text(weight: 500, period) \
+    #faculty
+  ]
+}
+
+== Education
+
+#eduitem(
+  institution: "National Taiwan Normal University",
+  location: "Taipei, Taiwan",
+  period: "2018–2020",
+  faculty: "Graduate Institute of Translation and Interpretation (did not graduate)"
+)
+
+#eduitem(
+  institution: "Adam Mickiewicz University",
+  location: "Poznań, Poland",
+  period: "2012–2016",
+  faculty: "Bachelor of Arts in Chinese Studies"
+)
+
+#v(0.5em)
 
 == Skills
 
 #strong[Languages:] Fluent in Polish (native), English (IELTS 8), Chinese (HSK 5, TOCFL 4). \
 Good knowledge of German (Goethe-Institut Zentrale Mittelstufenprüfung, C1). \
-Conversational in Russian and Spanish. \
-Basic knowledge of Japanese, Italian, Esperanto, Norwegian, Bulgarian.
+Conversational in Russian and Spanish.
 
-#strong[Programming languages:] Elixir, Ruby, Go, TypeScript, Rust, C\#.
+#strong[Programming languages:] Go, Elixir, Ruby, TypeScript, Rust, C\#.
 
-#strong[AWS:] S3, ECS/Fargate, EC2, RDS, DynamoDB, CodePipeline, ECR, Bedrock, 
+#strong[AWS:] S3, ECS/Fargate, EC2, RDS, DynamoDB, CodePipeline, ECR, Bedrock.
 
 #strong[Libraries and frameworks:] Phoenix, Ruby on Rails, ASP.NET Core, Astro, Svelte, React, sqlc. \
 
 #strong[Operating systems:] Debian GNU/Linux or macOS (preferred); FreeBSD (server). \
 
-#strong[Tooling:] Debian GNU/Linux or macOS; Goland, nvim, jj, mise; PostgreSQL, SQLite, MariaDB; Terraform, Terragrunt, Docker, Ansible, Pulumi.
+#strong[Tooling:] Goland, nvim, jj, mise; PostgreSQL, SQLite, MariaDB; Terraform, Terragrunt, Docker, Ansible, Pulumi.
 
 == Side projects
+
+#text(weight: 700)[Make Programming Fun Again] #h(1fr) #strong[2020--present] \
+#strong[Website:] #link("https://www.youtube.com/@KarolMoroz", "youtube.com/@KarolMoroz")
+
+My low-effort YouTube channel with around 2600 subscribers. Most videos are screencasts of myself coding simple projects in C or Go. Some of the popular videos include the #emph[Kernighan and Ritchie] series, an introduction to SQLite, and a hash table implementation in C (linear probing).
+
+#v(.5em)
 
 #text(weight: 700)[Homeo Sapiens] #h(1fr) #strong[November 2025--present] \
 #strong[Website:] #link("https://hs.authorizz.com") \
 #strong[Repository:] #link("https://github.com/moroz/homeosapiens-go")[github.com/moroz/homeosapiens-go] \
 #strong[Stack:] Go, PostgreSQL, sqlc, Gomponents, Tailwind, AWS S3, AWS CloudFront.
 
+E-commerce platform for selling webinars about homeopathy. Built for a family member.
+
+#v(.5em)
+
 #text(weight: 700)[Redesign of www.neter.ch] #h(1fr) #strong[August 2025--present] \
 #strong[Website:] #link("https://neter.authorizz.com") \
 #strong[Repository]: #link("https://github.com/moroz/absent-apogee/")[github.com/moroz/absent-apogee] \
 #strong[Stack:] Astro, Svelte.
+
+Marketing website for a gynecology and obstetrics clinic in Switzerland.
