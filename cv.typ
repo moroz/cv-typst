@@ -1,7 +1,7 @@
 #set text(
   font: (
     "IBM Plex Sans",
-    "Heiti TC"
+    "Noto Sans CJK TC"
   ), ligatures: false, lang: "en"
 )
 #set page(margin: 2cm)
@@ -23,7 +23,7 @@
 
 = Karol Moroz
 
-+48 735 935 972 | The Hague, NL (EU citizen) | #link("mailto:karol@moroz.dev") | #link("https://moroz.dev")[moroz.dev] | #link("https://github.com/moroz")[github.com/moroz] \
++31 6 1571 1901 | The Hague, NL | #link("mailto:karol@moroz.dev") | #link("https://moroz.dev")[moroz.dev] | #link("https://github.com/moroz")[github.com/moroz] \
 #strong[YouTube:] #link("https://www.youtube.com/@KarolMoroz")[Make Programming Fun Again]
 
 #let workitem(
@@ -177,18 +177,27 @@ Conversational in Russian and Spanish.
 
 #strong[Libraries and frameworks:] Phoenix, Ruby on Rails, ASP.NET Core, Astro, Svelte, React, sqlc. \
 
-#strong[Operating systems:] Debian GNU/Linux or macOS (preferred); FreeBSD (server). \
+#strong[Operating systems:] Debian, macOS, Win11/WSL2 (workstation); FreeBSD (server). \
 
 #strong[Tooling:] Goland, nvim, jj, mise; PostgreSQL, SQLite, MariaDB; Terraform, Terragrunt, Docker, Ansible, Pulumi.
 
 == Side projects
+
+#text(weight: 700)[Cycle retrospective meeting --- bubbletea, wish] #h(1fr) #strong[March 2026] \
+#strong[Repository:] #link("https://github.com/moroz/retro-20260325")[github.com/moroz/retro-20260325] \
+#strong[Stack:] Go, PostgreSQL, sqlc, Wish, Bubble Tea, Ansible.
+
+Interactive cycle retrospective meeting built as an SSH application with #link("https://github.com/charmbracelet/bubbletea")[bubbletea] as a TUI framework and #link("https://github.com/charmbracelet/wish")[wish] as an SSH server.
+Supports broadcasting comments, reactions, and participant presence data in real time. Deployed to an EC2 instance using ansible playbooks.
+
+#v(.75em)
 
 #text(weight: 700)[Make Programming Fun Again] #h(1fr) #strong[2020--present] \
 #strong[Website:] #link("https://www.youtube.com/@KarolMoroz", "youtube.com/@KarolMoroz")
 
 My low-effort YouTube channel with around 2600 subscribers. Most videos are screencasts of myself coding simple projects in C or Go. Some of the popular videos include the #emph[Kernighan and Ritchie] series, an introduction to SQLite, and a hash table implementation in C (linear probing).
 
-#v(.5em)
+#v(.75em)
 
 #text(weight: 700)[Homeo Sapiens] #h(1fr) #strong[November 2025--present] \
 #strong[Website:] #link("https://hs.authorizz.com") \
@@ -197,10 +206,10 @@ My low-effort YouTube channel with around 2600 subscribers. Most videos are scre
 
 E-commerce platform for selling webinars about homeopathy. Built for a family member.
 
-#v(.5em)
+#v(.75em)
 
 #text(weight: 700)[Redesign of www.neter.ch] #h(1fr) #strong[August 2025--present] \
-#strong[Website:] #link("https://neter.authorizz.com") \
+#strong[Website:] #link("https://neter-staging.netlify.app/") \
 #strong[Repository]: #link("https://github.com/moroz/absent-apogee/")[github.com/moroz/absent-apogee] \
 #strong[Stack:] Astro, Svelte.
 
